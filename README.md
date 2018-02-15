@@ -1,1 +1,1 @@
-# sphinctheremin Project
+# sphinxtheremin Project
