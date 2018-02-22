@@ -1,0 +1,27 @@
+live_loop :gamepad_b0 do
+  use_real_time
+  button = sync "/osc/b0"
+  synth :prophet, note: 41, cutoff: 75, sustain: 3
+  sleep 1
+end
+
+live_loop :gamepad_b1 do
+  use_real_time
+  button = sync "/osc/b1"
+  synth :prophet, note: 42, cutoff: 75, sustain: 3
+  sleep 1
+end
+
+live_loop :gamepad_b2 do
+  use_real_time
+  button = sync "/osc/b2"
+  synth :prophet, note: 43, cutoff: 75, sustain: 3
+  sleep 1
+end
+
+live_loop :gamepad_b3 do
+  use_real_time
+  button = sync "/osc/b3"
+  synth :prophet, note: 44, cutoff: 75, sustain: 3
+  sleep 1
+end
