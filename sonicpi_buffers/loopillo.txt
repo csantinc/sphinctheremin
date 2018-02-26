@@ -1,0 +1,22 @@
+
+
+live_loop :snare do
+  use_bpm 60
+  with_fx :flanger do
+    if one_in(2)
+      sample :drum_snare_hard, amp: 1
+    else
+      sample :drum_cymbal_closed, amp: 1
+    end
+    sleep 1
+  end
+end
+
+live_loop :loopillo do
+  use_bpm 120
+  #with_fx :krush, gain: 1, cutoff: 90 do
+  #sample :loop_garzul
+  sample :loop_tabla
+  sleep 2
+  #end
+end
