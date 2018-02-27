@@ -1,0 +1,47 @@
+in_thread(name: :drums) do
+  loop do
+    if (true)
+      sample :drum_heavy_kick
+    end
+    sleep 1
+  end
+end
+
+in_thread(name: :bass) do
+  loop do
+    if (true)
+      use_synth :fm
+      play 40, release: 0.2
+    end
+    sleep 0.5
+  end
+end
+
+
+live_loop :synte do
+  use_synth :zawa
+  with_fx :reverb, room: 0.9 do
+    with_fx :distortion, distort: 0.7, amp: 0.3 do
+      play :e1, release: 4, phase: 2, amp: 0.5
+    end
+  end
+  sleep 4
+  with_fx :reverb, room: 0.9 do
+    with_fx :distortion, distort: 0.7, amp: 0.3 do
+      play :f1, release: 4, phase: 2, amp: 0.5
+    end
+  end
+  sleep 4
+  with_fx :reverb, room: 0.9 do
+    with_fx :distortion, distort: 0.7, amp: 0.3 do
+      play :c2, release: 4, phase: 2, amp: 0.5
+    end
+  end
+  sleep 4
+  with_fx :reverb, room: 0.9 do
+    with_fx :distortion, distort: 0.7, amp: 0.3 do
+      play :f1, release: 4, phase: 2, amp: 0.5
+    end
+  end
+  sleep 4
+end

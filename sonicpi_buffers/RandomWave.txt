@@ -1,0 +1,16 @@
+#Random wave
+
+use_bpm 120
+
+live_loop :fade_inout_synth do
+  #stop
+  vol = (line 0, 1, inclusive: true, steps: 125).mirror
+  notes = (scale :e3, :minor_pentatonic, num_octaves: 2).shuffle
+  s = synth :dtri, cutoff: 70, note: :e3, sustain: 8, release: 0, amp: vol.tick(:v)
+  puts "---------- Vol 1: #{vol.look(:v)} ----------"
+  32.times do
+    control s, note: notes.tick, note_slide: 0.005, amp_slide: 0.125, amp: vol.tick(:v)
+    puts "---------- Vol 1: #{vol.look(:v)} ----------"
+    sleep 0.25
+  end
+end

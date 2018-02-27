@@ -1,0 +1,28 @@
+#Especismo
+
+live_loop :especismo do
+  use_synth :tb303
+  sync :arp
+  with_fx :echo, amp: 0.3, mix: 0.5, decay: 0.25 do
+    3.times do
+      play chord(:cs2, :min), release:1, cutoff: rrand(60,100)
+      sleep 1
+      play chord(:b2, :maj), release:1, cutoff: rrand(60,100)
+      sleep 1
+      play chord(:cs2, :min), release:0.5, cutoff: rrand(60,100)
+      sleep 0.5
+      play chord(:a2, :maj), release:0.5, cutoff: rrand(60,100)
+      sleep 0.5
+      play chord(:cs2, :minor7), release:1, cutoff: rrand(60,100)
+      sleep 1
+    end
+    4.times do
+      play chord(:fs2, :min), release:1, cutoff: rrand(60,100)
+      sleep 1
+    end
+    4.times do
+      play chord(:a2, :maj), release:1, cutoff: rrand(60,100)
+      sleep 1
+    end
+  end
+end
